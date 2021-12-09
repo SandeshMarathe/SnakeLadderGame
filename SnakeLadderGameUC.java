@@ -1,13 +1,33 @@
 public class SnakeLadderGameUC
 {
+
+	
+	public static final int NO_PLAY = 0 ;
+	public static final int LADDER = 1 ;
+	public static final int SNAKE = 2 ;
+
 	public static void main(String args[])
 	{
-		int singlePlayer=0;
-
-		System.out.println("Single Player at Start Position "+singlePlayer);
-
+		int startPosition=0;
+		int newPosition=0;
 		int dieRoll = (int) (Math.random()*6)+1;
+		int checkOption = (int) (Math.random()*3);
 
-		System.out.println("Roll The Die Between 1 to 6 is ="+dieRoll);
+		switch (checkOption) 
+		{
+			case NO_PLAY : 
+				newPosition = 0;
+				break;
+			case LADDER :
+				newPosition = dieRoll ;
+				break;
+			case SNAKE :
+				newPosition = -dieRoll ;
+				break;
+		}
+
+		startPosition = startPosition + newPosition;
+
+		System.out.println("Starting Position ="+startPosition);
 	}
 }
