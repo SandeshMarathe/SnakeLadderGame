@@ -9,13 +9,16 @@ public class SnakeLadderGameUC
 	{
 		int startPosition=0;
 		int newPosition=0;
-		int winPosition=10;
+		int winPosition=100;
+		int count=0;
 
-		int dieRoll = (int) (Math.random()*6)+1;
-		int checkOption = (int) (Math.random()*3);
-
-		while (startPosition<=winPosition) 
+		while(startPosition<winPosition)
 		{
+
+			int dieRoll = (int) (Math.random()*6)+1;
+			int checkOption = (int) (Math.random()*3);
+			count++;
+
 			switch (checkOption) 
 			{
 				case NO_PLAY : 
@@ -31,13 +34,17 @@ public class SnakeLadderGameUC
 
 			startPosition = startPosition + newPosition;
 
-			if(startPosition<0
+			if(startPosition<0)
 			{
 
 				startPosition=0;
 			}
+			else if (startPosition>100) 
+			{
+				startPosition=newPosition;
+			}
+			System.out.println("Your are Now at "+startPosition+"th"+" Position");
 		}
 
-		System.out.println("Start Position ="+startPosition);
 	}
 }
