@@ -1,7 +1,6 @@
 public class SnakeLadderGameUC
 {
 
-	
 	public static final int NO_PLAY = 0 ;
 	public static final int LADDER = 1 ;
 	public static final int SNAKE = 2 ;
@@ -10,24 +9,35 @@ public class SnakeLadderGameUC
 	{
 		int startPosition=0;
 		int newPosition=0;
+		int winPosition=10;
+
 		int dieRoll = (int) (Math.random()*6)+1;
 		int checkOption = (int) (Math.random()*3);
 
-		switch (checkOption) 
+		while (startPosition<=winPosition) 
 		{
-			case NO_PLAY : 
-				newPosition = 0;
-				break;
-			case LADDER :
-				newPosition = dieRoll ;
-				break;
-			case SNAKE :
-				newPosition = -dieRoll ;
-				break;
+			switch (checkOption) 
+			{
+				case NO_PLAY : 
+					newPosition = 0;
+					break;
+				case LADDER :
+					newPosition = dieRoll ;
+					break;
+				case SNAKE :
+					newPosition = -dieRoll ;
+					break;
+			}
+
+			startPosition = startPosition + newPosition;
+
+			if(startPosition<0
+			{
+
+				startPosition=0;
+			}
 		}
 
-		startPosition = startPosition + newPosition;
-
-		System.out.println("Starting Position ="+startPosition);
+		System.out.println("Start Position ="+startPosition);
 	}
 }
