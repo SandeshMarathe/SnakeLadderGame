@@ -45,6 +45,7 @@ public class SnakeLadderGameUC
 			}
 			System.out.println("Your are Now at "+startPosition+"th"+" Position");
 		}
+		System.out.println("\nCongratulation You are Win! \nAfter Die Rolled "+ count+" Times");
 
 	}
 }
