@@ -10,12 +10,13 @@ public class SnakeLadderGameUC
 		int startPosition=0;
 		int newPosition=0;
 		int winPosition=10;
-
-		int dieRoll = (int) (Math.random()*6)+1;
-		int checkOption = (int) (Math.random()*3);
+		int count=0;
 
 		while (startPosition<=winPosition) 
 		{
+			int dieRoll = (int) (Math.random()*6)+1;
+			int checkOption = (int) (Math.random()*3);
+			count++;
 			switch (checkOption) 
 			{
 				case NO_PLAY : 
